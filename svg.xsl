@@ -2,8 +2,8 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:template match="/root/графика">
         <svg xmlns="http://www.w3.org/2000/svg" 
-             width="{ширина}"
-             height="{высота}">
+             width="{@ширина}"
+             height="{@высота}">
            
  <ellipse id="{эллипс[1]/@id}" 
           fill="{эллипс[1]/@заливка}" 
