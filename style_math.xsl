@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <xsl:template match="/"> 
-    <math xmlns="http://www.w3.org/1998/Math/MathML">
+<html>
+<body>    
+   <math xmlns="http://www.w3.org/1998/Math/MathML">
         <mrow>
             <mi><xsl:value-of select="строка/операнд"/></mi>
             <mo><xsl:value-of select="строка/оператор"/></mo>
             <msqrt> 
-                <xsl:apply-templates/>
+                <xsl:apply-templates select="строка/корень/строка/дробь"/>
+                <xsl:apply-templates select="строка/корень/строка/строка/низверх"/>
+                <xsl:apply-templates select="строка/корень/строка/строка/строка/верх"/>
             </msqrt>
-        </mrow>
-        
-    </math>
+       </mrow>     
+   </math>
+</body>
+</html>
 </xsl:template>
 <xsl:template match="строка/корень/строка/дробь">
    <mfrac>
